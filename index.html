@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concave Carousel</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #000;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Concave Carousel -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/Vector23.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector22.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector21.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector20.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector18.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector17.png" /></div>
+
+        <!-- extra copies for looping -->
+        <div class="swiper-slide"><img src="img/Vector23.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector22.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector21.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector20.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector18.png" /></div>
+        <div class="swiper-slide"><img src="img/Vector17.png" /></div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        slidesPerView: 6,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      })
+    </script>
+  </body>
+</html>
